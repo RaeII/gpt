@@ -9,6 +9,9 @@ class gptObject(BaseModel):
     messages: List[object]
 
 def gpt4Bing(data: gptObject):
+
+    print('\n========\n == RESQUEST ON == \n=========\n')
+
     response = g4f.ChatCompletion.create(model=g4f.Model.gpt_4, messages=data.messages)
     return response
 
