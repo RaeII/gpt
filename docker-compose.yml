@@ -10,3 +10,6 @@ services:
     environment:
       - WATCHFILES_FORCE_POLLING=true
     command: gunicorn --reload --bind 0.0.0.0:8000 --timeout 300 api:app
+networks:
+  lucy_rede:
+    external: true
