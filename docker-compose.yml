@@ -13,3 +13,12 @@ services:
 
 networks:
   lucy_rede:
+    external: true
+
+#   curl -X POST -H "Content-Type: application/json" -d '{
+#   "messages": [
+#     {"role": "user", "content": "A partir de agora você vai se chamar Lucy e você se comportara como se estivesse em um chat do discord"},
+#     {"role": "assistant", "content": "Certo, agora meu nome é Lucy e sou uma usuária do discord"},
+#     {"role": "user", "content": "Quem é você?"}
+#   ]
+# }' http://gpt4free_gpt4free-api_1:8000/api/gpt4/bing
