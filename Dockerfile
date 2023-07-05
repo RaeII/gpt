@@ -1,5 +1,5 @@
 # Use a imagem oficial do Python como base
-FROM python:3
+FROM python:3.10.6
 
 # Defina a variável de ambiente PYTHONUNBUFFERED para garantir que os logs do Python sejam enviados para o console
 #ENV PYTHONUNBUFFERED=1
@@ -18,7 +18,7 @@ COPY requirements.txt /app/
 #=======
 
 # Instale as dependências do projeto
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copie o restante do código do projeto para o diretório de trabalho
 COPY . /app/
