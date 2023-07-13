@@ -10,7 +10,7 @@ class gptObject(BaseModel):
 
 def gpt4Bing(data: gptObject):
     print('\n========\n == BING == \n=========\n')
-    response = g4f.ChatCompletion.create(model=g4f.Model.gpt_4,messages=data.messages)
+    response = g4f.ChatCompletion.create(model=g4f.Model.gpt_4,messages=data.messages,provider=g4f.Provider.Bing)
     return response
     
 def gpt3_16k_0613(data: gptObject):
