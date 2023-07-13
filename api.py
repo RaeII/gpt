@@ -15,7 +15,7 @@ def gpt4Bing(data: gptObject):
     
 def gpt3_16k_0613(data: gptObject):
     print('\n=============\n== GPT 16k 0613==\n=============\n')
-    response = g4f.ChatCompletion.create(model=g4f.Model.gpt_35_turbo_16k_0613, messages=data.messages,provider=g4f.Provider.Easychat)
+    response = g4f.ChatCompletion.create(model=g4f.Model.gpt_35_turbo_16k_0613, messages=data.messages,provider=g4f.Provider.EasyChat)
     return response
     
 # 
