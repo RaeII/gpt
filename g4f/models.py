@@ -15,6 +15,17 @@ class Model:
     class gpt_35_turbo_16k_0613:
         name: str = 'gpt-3.5-turbo-16k-0613'
         base_provider: str = 'openai'
+        best_provider: Provider.Provider = Provider.Gravityengine
+
+    class gpt_35_turbo_16k:
+        name: str = 'gpt-3.5-turbo-16k'
+        base_provider: str = 'openai'
+        best_provider: Provider.Provider = Provider.Gravityengine
+    
+    
+    class gpt_35_turbo_16k_0613:
+        name: str = 'gpt-3.5-turbo-16k'
+        base_provider: str = 'openai'
         best_provider: Provider.Provider = Provider.EasyChat
 
     class gpt_4:

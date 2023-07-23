@@ -13,9 +13,14 @@ def gpt4Bing(data: gptObject):
     response = g4f.ChatCompletion.create(model=g4f.Model.gpt_4,messages=data.messages,provider=g4f.Provider.Bing)
     return response
     
+def gpt3_16k_0613Gravityengine(data: gptObject):
+    print('\n=============\n== GPT 16k 0613 Gravityengine==\n=============\n')
+    response = g4f.ChatCompletion.create(model=g4f.Model.gpt_35_turbo_16k_0613, messages=data.messages,provider=g4f.Provider.Gravityengine)
+    return response
+
 def gpt3_16k_0613(data: gptObject):
     print('\n=============\n== GPT 16k 0613==\n=============\n')
-    response = g4f.ChatCompletion.create(model=g4f.Model.gpt_35_turbo_16k_0613, messages=data.messages,provider=g4f.Provider.EasyChat)
+    response = g4f.ChatCompletion.create(model=g4f.Model.gpt_35_turbo_16k_0613, messages=data.messages,provider=g4f.Provider.Easychat)
     return response
     
 # 
@@ -36,7 +41,21 @@ def chatCompletionGpt3_16k_0613():
         errorMessage = str(e)
         print(e)
         return jsonify({'error':errorMessage})
-        
+
+@app.route('/api/gpt3/16k_0613/gravityengine', methods=['POST'])
+def chatCompletionGpt3_16k_0613Gravity():
+    try:
+
+        data = request.get_json()
+        response = gpt3_16k_0613Gravityengine(gptObject(**data))
+        return jsonify({'message':response})
+    
+    except Exception as e:
+        errorMessage = str(e)
+        print(e)
+        return jsonify({'error':errorMessage})
+
+
 @app.route('/api/gpt4/bing', methods=['POST'])
 def chatCompletionGpt4Bing():
     try:
